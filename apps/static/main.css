@@ -1,0 +1,100 @@
+.links-page {
+    margin: 0;
+    padding-top: 15px;
+}
+
+.link-block {
+    display: block;
+    padding: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#qu-link-1 {
+    background-color: #adf2bd;
+}
+
+#qu-link-2 {
+    background-color: #555555;
+}
+
+#qu-link-3 {
+    background-color: #000000;
+}
+
+#qu-link-1:link {
+    color: red;
+}
+
+#qu-link-2:link {
+    color: gold;
+}
+
+#qu-link-3:link {
+    color: white;
+}
+
+#qu-link-1:visited, #qu-link-2:visited, #qu-link-3:visited {
+    color: violet;
+}
+
+#qu-link-1:hover, #qu-link-2:hover, #qu-link-3:hover {
+    color: #008CBA;
+    background-color: #f0f0f0;
+    text-decoration: none;
+}
+
+#qu-link-1:active, #qu-link-2:active, #qu-link-3:active {
+    color: orange;
+}
+
+.formatting-title {
+    background-color: beige;
+    color: green;
+    padding: 10px 20px;
+}
+
+.formatting-text p {
+    font-family: verdana;
+    font-size: 20px;
+}
+
+.listing-title {
+    background-color: cadetblue;
+    color: white;
+    padding: 10px 20px;
+}
+
+.listing {
+    font-size: 20px;
+}
+
+.tables-page {
+    font-size: 20px;
+}
+
+.fruits-table {
+    margin: 0 auto 30px auto;
+    border: 1px solid black;
+}
+
+.fruits-table caption {
+    font-weight: bold;
+}
+
+.fruits-table th, .fruits-table td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.camels-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.camels-table th, .camels-table td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 2px 10px;
+    white-space: nowrap;
+}
