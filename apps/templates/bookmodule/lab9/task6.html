@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Lab 9 Task 6 {% endblock title %}
+
+{% block content %}
+    <h2>Number of books of each publisher</h2>
+    <p>Only books with price greater than 50 and quantity from 1 to 4.</p>
+    <table border="1">
+        <tr>
+            <th>Publisher</th>
+            <th>Number of books</th>
+        </tr>
+        {% for publisher in publishers %}
+        <tr>
+            <td>{{ publisher.name }}</td>
+            <td>{{ publisher.num_books }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

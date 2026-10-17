@@ -1,0 +1,20 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Lab 8 Task 7 {% endblock title %}
+
+{% block content %}
+    <h2>Number of students in each city</h2>
+    <table border="1">
+        <tr>
+            <th>City</th>
+            <th>Students</th>
+        </tr>
+        {% for address in cities %}
+        <tr>
+            <td>{{ address.city }}</td>
+            <td>{{ address.num_students }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

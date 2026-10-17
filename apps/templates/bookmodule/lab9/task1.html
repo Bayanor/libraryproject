@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Lab 9 Task 1 {% endblock title %}
+
+{% block content %}
+    <h2>Books with percentage availability</h2>
+    <p>Total number of books: {{ total }}</p>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Availability</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.id }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.quantity }}</td>
+            <td>{{ book.percentage|floatformat:2 }}%</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

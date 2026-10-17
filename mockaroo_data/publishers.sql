@@ -1,0 +1,10 @@
+insert into bookmodule_publisher (name, location) values ('Ntag', 'Qijiazuo');
+insert into bookmodule_publisher (name, location) values ('Quatz', 'Yermish’');
+insert into bookmodule_publisher (name, location) values ('Skynoodle', 'Lincoln');
+insert into bookmodule_publisher (name, location) values ('Feedbug', 'Boncis');
+insert into bookmodule_publisher (name, location) values ('Devcast', 'Mogi Guaçu');
+insert into bookmodule_publisher (name, location) values ('Ailane', 'Kilmacanoge');
+insert into bookmodule_publisher (name, location) values ('Divavu', 'Dobrzyca');
+insert into bookmodule_publisher (name, location) values ('Jetpulse', 'Ancahuasi');
+insert into bookmodule_publisher (name, location) values ('Voonder', 'Campamento');
+insert into bookmodule_publisher (name, location) values ('Brightdog', 'Zhangdu');

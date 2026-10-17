@@ -1,0 +1,20 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Lab 9 Task 5 {% endblock title %}
+
+{% block content %}
+    <h2>Publishers and their number of highly rated books (rating 4 or 5)</h2>
+    <table border="1">
+        <tr>
+            <th>Publisher</th>
+            <th>Highly rated books</th>
+        </tr>
+        {% for publisher in publishers %}
+        <tr>
+            <td>{{ publisher.name }}</td>
+            <td>{{ publisher.high_rated }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
