@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Lab 10 Part 2 - Edit Book {% endblock title %}
+
+{% block content %}
+    <h2>Edit book #{{ book.id }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Book</button>
+    </form>
+    <br>
+    <a href="{% url 'books.lab9_part2_listbooks' %}">Back to books</a>
+{% endblock content %}
