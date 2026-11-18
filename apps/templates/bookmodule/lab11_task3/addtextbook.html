@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Lab 11 Task 3 - Add Textbook {% endblock title %}
+
+{% block content %}
+    <h2>Add a new textbook</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Textbook</button>
+    </form>
+    <br>
+    <a href="{% url 'books.lab11_task3_textbooks' %}">Back to textbooks</a>
+{% endblock content %}

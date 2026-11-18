@@ -38,4 +38,9 @@ urlpatterns = [
     path('lab9_part2/addbook', views.lab9_part2_addbook, name="books.lab9_part2_addbook"),
     path('lab9_part2/editbook/<int:id>', views.lab9_part2_editbook, name="books.lab9_part2_editbook"),
     path('lab9_part2/deletebook/<int:id>', views.lab9_part2_deletebook, name="books.lab9_part2_deletebook"),
+
+    path('lab11_task3/textbooks', views.lab11_task3_textbooks, name="books.lab11_task3_textbooks"),
+    path('lab11_task3/addtextbook', views.lab11_task3_addtextbook, name="books.lab11_task3_addtextbook"),
+    path('lab11_task3/edittextbook/<int:id>', views.lab11_task3_edittextbook, name="books.lab11_task3_edittextbook"),
+    path('lab11_task3/deletetextbook/<int:id>', views.lab11_task3_deletetextbook, name="books.lab11_task3_deletetextbook"),
 ]

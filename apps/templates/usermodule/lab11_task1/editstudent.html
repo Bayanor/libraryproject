@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Lab 11 Task 1 - Edit Student {% endblock title %}
+
+{% block content %}
+    <h2>Edit student #{{ student.id }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Student</button>
+    </form>
+    <br>
+    <a href="{% url 'users.lab11_task1_students' %}">Back to students</a>
+{% endblock content %}

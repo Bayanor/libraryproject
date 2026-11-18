@@ -2,8 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q, Count, Sum, Avg, Max, Min
 from django.utils import timezone
-from .models import Book, Publisher
-from .forms import BookForm
+from .models import Book, Publisher, Textbook
+from .forms import BookForm, TextbookForm
 
 
 def index(request):
@@ -226,3 +226,38 @@ def lab9_part2_deletebook(request, id):
     book = get_object_or_404(Book, id=id)
     book.delete()
     return redirect('books.lab9_part2_listbooks')
+
+
+def lab11_task3_textbooks(request):
+    textbooks = Textbook.objects.all().order_by('-id')
+    return render(request, 'bookmodule/lab11_task3/textbooks.html', {'textbooks': textbooks})
+
+
+def lab11_task3_addtextbook(request):
+    if request.method == 'POST':
+        form = TextbookForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('books.lab11_task3_textbooks')
+    else:
+        form = TextbookForm()
+    return render(request, 'bookmodule/lab11_task3/addtextbook.html', {'form': form})
+
+
+def lab11_task3_edittextbook(request, id):
+    textbook = get_object_or_404(Textbook, id=id)
+    if request.method == 'POST':
+        form = TextbookForm(request.POST, request.FILES, instance=textbook)
+        if form.is_valid():
+            form.save()
+            return redirect('books.lab11_task3_textbooks')
+    else:
+        form = TextbookForm(instance=textbook)
+    return render(request, 'bookmodule/lab11_task3/edittextbook.html', {'form': form, 'textbook': textbook})
+
+
+def lab11_task3_deletetextbook(request, id):
+    textbook = get_object_or_404(Textbook, id=id)
+    textbook.cover.delete(save=False)
+    textbook.delete()
+    return redirect('books.lab11_task3_textbooks')

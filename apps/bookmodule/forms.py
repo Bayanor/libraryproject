@@ -1,5 +1,5 @@
 from django import forms
-from .models import Book
+from .models import Book, Textbook
 
 
 class BookForm(forms.ModelForm):
@@ -26,3 +26,11 @@ class BookForm(forms.ModelForm):
         if rating < 1 or rating > 5:
             raise forms.ValidationError('Rating must be between 1 and 5.')
         return rating
+
+
+class TextbookForm(forms.ModelForm):
+    class Meta:
+        model = Textbook
+        fields = ['title', 'author', 'edition', 'cover']
+        labels = {'cover': 'Cover image'}
+        widgets = {'cover': forms.ClearableFileInput(attrs={'accept': 'image/*'})}

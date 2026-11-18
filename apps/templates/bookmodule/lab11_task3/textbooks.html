@@ -1,0 +1,32 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Lab 11 Task 3 - Textbooks {% endblock title %}
+
+{% block content %}
+    <h2>Textbooks</h2>
+    <a href="{% url 'books.lab11_task3_addtextbook' %}">Add a new textbook</a>
+    <br><br>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Cover</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Edition</th>
+            <th>Actions</th>
+        </tr>
+        {% for textbook in textbooks %}
+        <tr>
+            <td>{{ textbook.id }}</td>
+            <td><img src="{{ textbook.cover.url }}" alt="{{ textbook.title }}" width="80"></td>
+            <td>{{ textbook.title }}</td>
+            <td>{{ textbook.author }}</td>
+            <td>{{ textbook.edition }}</td>
+            <td>
+                <a href="{% url 'books.lab11_task3_edittextbook' textbook.id %}">Edit</a>
+                <a href="{% url 'books.lab11_task3_deletetextbook' textbook.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

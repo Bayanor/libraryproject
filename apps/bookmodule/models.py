@@ -24,3 +24,10 @@ class Book(models.Model):
     rating = models.SmallIntegerField(default=1)
     publisher = models.ForeignKey(Publisher, null=True, on_delete=models.SET_NULL)
     authors = models.ManyToManyField(Author)
+
+
+class Textbook(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+    edition = models.SmallIntegerField(default=1)
+    cover = models.ImageField(upload_to='covers/')
