@@ -14,4 +14,8 @@ urlpatterns = [
     path('lab11_task2/addstudent', views.lab11_task2_addstudent, name="users.lab11_task2_addstudent"),
     path('lab11_task2/editstudent/<int:id>', views.lab11_task2_editstudent, name="users.lab11_task2_editstudent"),
     path('lab11_task2/deletestudent/<int:id>', views.lab11_task2_deletestudent, name="users.lab11_task2_deletestudent"),
+
+    path('register', views.lab12_register, name="users.register"),
+    path('login', views.lab12_login, name="users.login"),
+    path('logout', views.lab12_logout, name="users.logout"),
 ]

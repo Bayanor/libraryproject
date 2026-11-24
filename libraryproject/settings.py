@@ -56,6 +56,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'libraryproject.urls'
 
+# Where @login_required sends a user that is not logged in yet
+LOGIN_URL = '/users/login'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Lab 12 - Sign up {% endblock title %}
+
+{% block content %}
+    <h2>Sign up</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" name="register">Register</button>
+    </form>
+    <br>
+    <a href="{% url 'users.login' %}">Already have an account? Log in</a>
+{% endblock content %}

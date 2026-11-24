@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q, Count, Sum, Avg, Max, Min
@@ -228,11 +229,13 @@ def lab9_part2_deletebook(request, id):
     return redirect('books.lab9_part2_listbooks')
 
 
+@login_required
 def lab11_task3_textbooks(request):
     textbooks = Textbook.objects.all().order_by('-id')
     return render(request, 'bookmodule/lab11_task3/textbooks.html', {'textbooks': textbooks})
 
 
+@login_required
 def lab11_task3_addtextbook(request):
     if request.method == 'POST':
         form = TextbookForm(request.POST, request.FILES)
@@ -244,6 +247,7 @@ def lab11_task3_addtextbook(request):
     return render(request, 'bookmodule/lab11_task3/addtextbook.html', {'form': form})
 
 
+@login_required
 def lab11_task3_edittextbook(request, id):
     textbook = get_object_or_404(Textbook, id=id)
     if request.method == 'POST':
@@ -256,6 +260,7 @@ def lab11_task3_edittextbook(request, id):
     return render(request, 'bookmodule/lab11_task3/edittextbook.html', {'form': form, 'textbook': textbook})
 
 
+@login_required
 def lab11_task3_deletetextbook(request, id):
     textbook = get_object_or_404(Textbook, id=id)
     textbook.cover.delete(save=False)

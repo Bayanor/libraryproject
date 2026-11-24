@@ -14,6 +14,9 @@
 </head>
 <body>
     {% include "includes/header.html" %}
+    {% for message in messages %}
+        <div class="message {{ message.tags }}">{{ message }}</div>
+    {% endfor %}
     {% block content %} {% endblock content %}
     {% include "includes/footer.html" %}
 </body>

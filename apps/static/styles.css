@@ -14,3 +14,49 @@
 .topnav a.active{
     color: #008CBA;
 }
+
+.topnav a.navright {
+    float: right;
+    margin-right: 15px;
+}
+
+.topnav span.navuser {
+    float: right;
+    margin-right: 25px;
+    font-size: 17px;
+    color: #555555;
+}
+
+/* one style per message tag of contrib.messages */
+.message {
+    padding: 10px 14px;
+    margin: 12px 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.message.success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
+.message.error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+.message.warning {
+    color: #664d03;
+    background-color: #fff3cd;
+    border-color: #ffecb5;
+}
+
+.message.info,
+.message.debug {
+    color: #055160;
+    background-color: #cff4fc;
+    border-color: #b6effb;
+}
